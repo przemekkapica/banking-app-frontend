@@ -1,8 +1,8 @@
 import { Account } from './model/account';
-export abstract class ClientRepository {
-    abstract getClientById(id: string): Promise<Account>;
+export abstract class AccountRepository {
+    abstract getAccountById(id: string): Promise<Account>;
 
-    abstract getAllClients(): Promise<Account[]>;
+    abstract getAllAccounts(): Promise<Account[]>;
 
-    abstract updateClient(): Promise<Account>;
+    abstract updateAccount(): Promise<Account>;
 }

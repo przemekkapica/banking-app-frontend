@@ -10,6 +10,6 @@ export class GetAccountUseCase implements UseCase<string, Account> {
     constructor(private accountRepository: AccountRepository) { }
 
     public async call(request: string): Promise<Account> {
-        return this.accountRepository.getClientById(request);
+        return this.accountRepository.getAccountById(request);
     }
 }
