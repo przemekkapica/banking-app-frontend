@@ -1,0 +1,18 @@
+<h1>Register Client</h1>
+<p><label>First name:</label></p>
+<p><input type="text" (change)="onNameChange($event)"/></p>
+<p><label>Last name:</label></p>
+<p><input type="text" (change)="onLastNameChange($event)"/></p>
+<p><label>Date of birth:</label></p>
+<p><input type="date" (change)="onDateChange($event)"/></p>
+<p><label>Email adress:</label></p>
+<div *ngIf="wrong_email"><p><label>This email address is invalid</label></p></div>
+<p><input type="text" (change)="onEmailChange($event)"/></p>
+<p><label>Password:</label></p>
+<div *ngIf="wrong_password"><label>A password must contain 8 characters, at least 1 letter and at least 1 number</label></div>
+<p><input type="text" (change)="onPasswordChange($event)"/></p>
+<p><label>Repeat password:</label></p>
+<div *ngIf="wrong_repeated_password"><p><label>Passwords don't match</label></p></div>
+<p><input type="text" (change)="onRepeatedPasswordChange($event)"/></p>
+<p><button (click)="RegisterUser">Register</button><p>
+<p><button routerLink=''>Go back to sign in page</button></p>

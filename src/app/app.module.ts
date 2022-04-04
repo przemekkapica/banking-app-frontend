@@ -11,11 +11,13 @@ import { AuthComponent } from './presentation/pages/auth/auth.component';
 // primeng modules here
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
+import { RegisterComponent } from './presentation/pages/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
+    RegisterComponent,
   ],
   imports: [
     AppRoutingModule,

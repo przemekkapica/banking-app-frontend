@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AppRoutingModule} from '../../routing/app-routing.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -7,7 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  private email : string;
+  private password : string;
+ public invalid : boolean = false;
+  constructor( private router: Router) {
+    this.email="";
+    this.password = "";
+   }
+
+  SignInClick() : void {
+    
+
+    //proceed with email and password to database
+    // if does not exist 
+        this.invalid = true;
+
+    // else 
+        //this.invalid = false;
+  }
+
+ 
+  onEmailChange(event: any): void {
+    this.email= event.target.value;
+ 
+    }
+
+    onPasswordChange(event: any): void {
+      this.password= event.target.value;
+      }
+
 
   ngOnInit(): void {
   }
