@@ -1,0 +1,45 @@
+<div class="sign-up-container">
+    <p-card>
+        <ng-template pTemplate="header" >
+            <div style="padding-top: 20px; text-align: center;">
+                <h1 style="margin: 0;">Sign up</h1>
+            </div>
+        </ng-template>
+        <div>
+            <span class="p-float-label">
+                <input id="username" type="text" pInputText [(ngModel)]="username" style="width: 100%;"> 
+                <label for="username">Username</label>
+            </span>
+            <span class="p-float-label" style="margin-top: 24px;">
+                <input id="first-name" type="text" pInputText [(ngModel)]="firstName" style="width: 100%;"> 
+                <label for="first-name">First name</label>
+            </span>
+            <span class="p-float-label" style="margin-top: 24px;">
+                <input id="last-name" type="text" pInputText [(ngModel)]="lastName" style="width: 100%;"> 
+                <label for="last-name">Last name</label>
+            </span>
+
+            <div style="margin-top: 24px;">
+                <p-calendar inputId="basic" [(ngModel)]="dateOfBirth" placeholder="Date of birth"></p-calendar>
+            </div>
+
+            <span class="p-float-label" style="margin-top: 24px;">
+                <input id="password" type="text" pInputText [(ngModel)]="password" style="width: 100%;"> 
+                <label for="password">Password</label>
+            </span>
+            <span class="p-float-label" style="margin-top: 24px;">
+                <input id="repeated-password" type="text" pInputText [(ngModel)]="repeatedPassword" style="width: 100%;"> 
+                <label for="repeated-password">Repeat password</label>
+            </span>
+        </div>
+
+        <div style="width: 100%; margin-top: 60px; text-align: center;">
+            <div>
+                <button pButton label="Sign up" class="p-button-rounded" (click)="signUp()" style="width: 100%;"></button>
+            </div>
+            <div style="margin-top: 10px;">
+                <button pButton label="Already have an account?" class="p-button-sm p-button-text p-button-secondary" routerLink="/" style="width: 100%;"></button>
+            </div>
+        </div>
+    </p-card>
+</div>
