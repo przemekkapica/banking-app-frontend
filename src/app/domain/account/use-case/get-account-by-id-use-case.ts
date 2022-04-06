@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { UseCase } from "../../../data/common/use-case";
+import { UseCase } from "../../common/use-case";
 import { AccountRepository } from "../account-repository";
 import { Account } from "../model/account";
 
