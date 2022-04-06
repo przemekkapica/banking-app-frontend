@@ -1,5 +1,5 @@
 import { Server } from "../../server/model/server";
 
-export interface CEO extends Server {
+export interface CEO {
      server: Server;
 }
