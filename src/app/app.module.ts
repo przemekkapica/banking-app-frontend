@@ -7,6 +7,11 @@ import { AppComponent } from './presentation/app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { AuthComponent } from './presentation/pages/auth/auth.component';
+import { MessagesModule } from "primeng/messages";
+import { MessageModule } from "primeng/message";
+import {PasswordModule} from 'primeng/password';
+import {ButtonModule} from 'primeng/button';
+import {CardModule} from 'primeng/card';
 
 // primeng modules here
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -25,7 +30,12 @@ import { RegisterComponent } from './presentation/pages/register/register.compon
     BrowserModule,
     CommonModule,
     InputTextareaModule,
-    InputTextModule
+    InputTextModule,
+    MessagesModule,
+    MessageModule,
+    PasswordModule,
+    ButtonModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

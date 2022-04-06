@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
   private last_name : string;
   private email : string;
   private date_of_birth : Date;
-  private password : string;
+  public password : string;
   private repeated_password : string;
   public wrong_password : boolean = false;
   public wrong_repeated_password : boolean = false;

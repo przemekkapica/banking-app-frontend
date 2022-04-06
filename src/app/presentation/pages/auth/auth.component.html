@@ -1,8 +1,10 @@
-<h1>Sign in</h1>
+<div class = "centered"><p-card header="Sign in" [style]="{'width': 'auto', 'margin-bottom': '2em'}">
 <p><label>Email address:</label></p>
-<p><input type="text" pInputText placeholder="Type email here" (change)="onEmailChange($event)"/></p>
+<p><input type="text"  placeholder="Type email here" (change)="onEmailChange($event)"/></p>
 <p><label>Password</label></p>
-<p><input type="text" pInputText placeholder="Type password here" (change)="onPasswordChange($event)" /></p>
-<p><button (click)="SignInClick()">Sign in</button></p>
-<p><button routerLink='/register'>Register</button><p>
-<div *ngIf="invalid"><p><label>Given data is invalid</label></p></div>
+<p><input type="password" placeholder="Type password here" (change)="onPasswordChange($event)" /></p>
+<p><button pButton class="p-button-sm p-button-rounded" (click)="SignInClick()">Sign in</button>
+<button pButton class = "p-button-sm p-button-rounded" routerLink='/register'>Register</button></p>
+<label *ngIf="invalid"><p><p-message severity="error" text="Given data is invalid."></p-message></label>
+</p-card>
+</div>
