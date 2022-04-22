@@ -21,12 +21,18 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
 import { CalendarModule } from 'primeng/calendar';
+import { EmployeeComponent } from './presentation/pages/employee/employee.component';
+import { NavbarComponent } from './presentation/common/navbar/navbar.component';
+import { MenubarModule } from 'primeng/menubar';
+import { MenuItem } from 'primeng/api';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     SignUpComponent,
+    EmployeeComponent,
+    NavbarComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -44,6 +50,7 @@ import { CalendarModule } from 'primeng/calendar';
     DividerModule,
     CalendarModule,
     BrowserAnimationsModule,
+    MenubarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
