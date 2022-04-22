@@ -1,0 +1,45 @@
+<app-navbar [items]="navbarItems"></app-navbar>
+
+<div style="margin-top: 20px; margin-right: 20px; margin-left: 20px;">
+    <div class="grid">
+        <div class="col-8">
+            <div class="grid">
+                <div class="col-12">
+                    <p-card header="Hello employee!">
+                        <div>
+                            What about doing some shitty work today? :)
+                            <br><br>
+                            {{loremIpsum}}
+                        </div>
+                    </p-card>
+                </div>
+                <div class="col-6">
+                    <p-card header="Open transfers">
+                        <div>
+                            {{loremIpsum}}
+                        </div>
+                    </p-card>
+                </div>
+                <div class="col-6">
+                    <p-card header="Recent actions">
+                        <div>
+                            {{loremIpsum}}
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <p-card header="It's a bank">
+                <div>
+                    <p>It's a serious bank</p>
+                    <br><br>
+                    {{loremIpsum}}
+                    <br><br>
+                    {{loremIpsum}}
+                </div>
+            </p-card>
+        </div>
+    </div>
+</div>
+
