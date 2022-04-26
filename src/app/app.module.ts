@@ -25,6 +25,8 @@ import { EmployeeComponent } from './presentation/pages/employee/employee.compon
 import { NavbarComponent } from './presentation/common/navbar/navbar.component';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
+import { ClientComponent } from './presentation/pages/client/client.component';
+import {OrderListModule} from 'primeng/orderlist';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { MenuItem } from 'primeng/api';
     SignUpComponent,
     EmployeeComponent,
     NavbarComponent,
+    ClientComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -51,6 +54,7 @@ import { MenuItem } from 'primeng/api';
     CalendarModule,
     BrowserAnimationsModule,
     MenubarModule,
+    OrderListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
