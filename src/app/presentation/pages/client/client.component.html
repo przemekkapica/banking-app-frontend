@@ -1,0 +1,86 @@
+<app-navbar [items]="navbarItems"></app-navbar>
+
+<div style="margin-top: 20px; margin-right: 20px; margin-left: 20px;">
+    <div class="grid">
+        <div class="col-8">
+            <div class="grid">
+                <div class="col-12">
+                    <p-card header="Hello client!">
+                        <div>
+                            Your account info:
+                            <br><br>
+                            {{loremIpsum}}
+                        </div>
+                        <button pButton label="Money transfer" class="p-button-rounded"
+                            style="width: 100%;  margin-top: 2ex; margin-bottom: 2ex; margin-right: 2ex; margin-left: 2ex;"></button>
+                        <button pButton label="Close account" class="p-button-rounded"
+                            style="width: 100%;  margin-top: 2ex; margin-bottom: 2ex; margin-right: 2ex; margin-left: 2ex;"></button>
+                    </p-card>
+                </div>
+                <div class="col-6">
+                    <p-card header="Your deposits">
+                        <div>
+                            <button pButton label="New deposit" class="p-button-rounded"
+                                style="width: 100%; margin-top: 2ex; margin-bottom: 2ex; margin-right: 2ex; margin-left: 2ex;"></button>
+
+                            <p-orderList [value]="deposits">
+
+                                <ng-template let-deposit pTemplate="item">
+                                    <div>
+                                        <div class="product-list-detail">
+                                            <h5 class="mb-2">Money amount: ${{deposit.moneyAmount}}</h5>
+                                            <h5 class="mb-2">Interest rate: ${{deposit.interestRate}}</h5>
+                                            <p>Start date: {{deposit.startDate | date:'shortDate'}}</p>
+                                            <p>End date: {{deposit.endDate | date:'shortDate'}}</p>
+                                            <button pButton label="Close deposit" class="p-button-rounded"
+                                                style="width: 100%;  margin-top: 1ex; margin-bottom: 1ex; margin-right: 1ex; margin-left: 1ex;"></button>
+                                            <button pButton label="Withdraw from deposit" class="p-button-rounded"
+                                                style="width: 100%;  margin-top: 1ex; margin-bottom: 1ex; margin-right: 1ex; margin-left: 1ex;"></button>
+
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-orderList>
+
+                        </div>
+                    </p-card>
+                </div>
+                <div class="col-6">
+                    <p-card header="Your loans">
+                        <div>
+                            <button pButton label="New loan" class="p-button-rounded"
+                                style="width: 100%; margin-top: 2ex; margin-bottom: 2ex; margin-right: 2ex; margin-left: 2ex;"></button>
+
+                            <p-orderList [value]="loans">
+
+                                <ng-template let-loan pTemplate="item">
+                                    <div>
+                                        <div class="product-list-detail">
+                                            <h5 class="mb-2">Money amount: ${{loan.amountToPay}}</h5>
+                                            <h5 class="mb-2">Interest rate: ${{loan.interestRate}}</h5>
+                                            <p>Start date: {{loan.startDate | date:'shortDate'}}</p>
+                                            <p>End date: {{loan.endDate | date:'shortDate'}}</p>
+
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-orderList>
+
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <p-card header="It's a bank">
+                <div>
+                    <p>Here are our new offers!</p>
+                    <br><br>
+                    {{loremIpsum}}
+                    <br><br>
+                    {{loremIpsum}}
+                </div>
+            </p-card>
+        </div>
+    </div>
+</div>

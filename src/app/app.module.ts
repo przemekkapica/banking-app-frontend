@@ -1,15 +1,19 @@
+// angular modules here 
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './presentation/routing/app-routing.module';
-
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './presentation/app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// components here 
+import { AppRoutingModule } from './presentation/routing/app-routing.module';
+import { AppComponent } from './presentation/app.component';
 import { SignInComponent } from './presentation/pages/sign-in/sign-in.component';
 import { SignUpComponent } from './presentation/pages/sign-up/sign-up.component';
+import { ClientComponent } from './presentation/pages/client/client.component';
+import { EmployeeComponent } from './presentation/pages/employee/employee.component';
+import { NavbarComponent } from './presentation/common/navbar/navbar.component';
 
 // primeng modules here
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -21,10 +25,9 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
 import { CalendarModule } from 'primeng/calendar';
-import { EmployeeComponent } from './presentation/pages/employee/employee.component';
-import { NavbarComponent } from './presentation/common/navbar/navbar.component';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
+import { OrderListModule } from 'primeng/orderlist';
 
 @NgModule({
   declarations: [
@@ -33,12 +36,15 @@ import { MenuItem } from 'primeng/api';
     SignUpComponent,
     EmployeeComponent,
     NavbarComponent,
+    ClientComponent,
   ],
   imports: [
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
     CommonModule,
+    FormsModule,
+    BrowserAnimationsModule,
     InputTextareaModule,
     InputTextModule,
     MessagesModule,
@@ -46,11 +52,10 @@ import { MenuItem } from 'primeng/api';
     PasswordModule,
     ButtonModule,
     CardModule,
-    FormsModule,
     DividerModule,
     CalendarModule,
-    BrowserAnimationsModule,
     MenubarModule,
+    OrderListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
