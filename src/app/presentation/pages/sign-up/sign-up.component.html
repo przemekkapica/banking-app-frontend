@@ -32,7 +32,7 @@
 
             <span class="p-float-label" style="margin-top: 24px;">
                 <input required pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
-                id="password" type="text" pInputText [(ngModel)]="password" #password_control="ngModel" [ngClass] = "{'ng-invalid': (password_control.touched && password_control.invalid) }" style="width: 100%;"> 
+                id="password" type="password" pInputText [(ngModel)]="password" #password_control="ngModel" [ngClass] = "{'ng-invalid': (password_control.touched && password_control.invalid) }" style="width: 100%;"> 
                 <label for="password">Password</label>
             </span>
             <div *ngIf="password_control.touched && password_control.errors?.['required']"> <p-message severity="error" text="Password is required"></p-message></div>
@@ -41,8 +41,8 @@
 
 
             <span class="p-float-label" style="margin-top: 24px;">
-                <input required 
-                id="repeated-password" type="text" pInputText [(ngModel)]="repeatedPassword" #repeated_control="ngModel" [ngClass] = "{'ng-invalid': (repeated_control.touched && repeatedPassword!=password) }" style="width: 100%;"> 
+                <input required (keydown.enter)="signUp()"
+                id="repeated-password" type="password" pInputText [(ngModel)]="repeatedPassword" #repeated_control="ngModel" [ngClass] = "{'ng-invalid': (repeated_control.touched && repeatedPassword!=password) }" style="width: 100%;"> 
                 <label for="repeated-password">Repeat password</label>
             </span>
             <div *ngIf="repeated_control.touched && repeatedPassword!=password"> <p-message severity="error" text="Passwords don't match"></p-message></div>
