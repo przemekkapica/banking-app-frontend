@@ -11,7 +11,7 @@
                 <label for="username">Username</label>
             </span>
             <span class="p-float-label" style="margin-top: 24px;">
-                <input id="password" type="text" pInputText [(ngModel)]="password" style="width: 100%;"> 
+                <input id="password" type="password" pInputText [(ngModel)]="password" style="width: 100%;" (keydown.enter)="signIn()"> 
                 <label for="password">Password</label>
             </span>
         </div>
