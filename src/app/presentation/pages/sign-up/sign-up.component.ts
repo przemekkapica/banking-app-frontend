@@ -20,8 +20,11 @@ export class SignUpComponent implements OnInit {
   dateOfBirth: Date | null = null;
   password: string = '';
   repeatedPassword: string = '';
+  minCalendarDate: Date = new Date(1900, 1, 1, 0, 0, 0);
+  maxCalendarDate: Date = new Date();
 
-  constructor() {}
+
+  constructor() { }
 
   signUp(): void { }
 
