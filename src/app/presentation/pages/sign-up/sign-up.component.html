@@ -26,6 +26,10 @@
             <div *ngIf="lastname_control.touched && lastname_control.invalid"> <p-message severity="error" text="Last name is required"></p-message></div>
 
             <div style="margin-top: 24px;">
+                <p-dropdown [options]="roles" [(ngModel)]="selectedRole" optionLabel="roleName" optionValue="role" placeholder="Role" [style]="{'width':'100%'}"></p-dropdown>        
+            </div>
+
+            <div style="margin-top: 24px;">
                 <p-calendar [minDate] = "minCalendarDate" [maxDate]="maxCalendarDate" inputId="basic" [(ngModel)]="dateOfBirth" placeholder="Date of birth" #calendar_control="ngModel" [ngClass] = "{'ng-invalid': (calendar_control.touched && calendar_control.invalid) }"></p-calendar>
             </div>
             <div *ngIf="calendar_control.touched && calendar_control.invalid"> <p-message severity="error" text="Birth date is required"></p-message></div>

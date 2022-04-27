@@ -27,8 +27,9 @@ import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
 import { CalendarModule } from 'primeng/calendar';
 import { MenubarModule } from 'primeng/menubar';
-import { MenuItem } from 'primeng/api';
 import { OrderListModule } from 'primeng/orderlist';
+import { DropdownModule } from 'primeng/dropdown';
+
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { OrderListModule } from 'primeng/orderlist';
     CalendarModule,
     MenubarModule,
     OrderListModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
