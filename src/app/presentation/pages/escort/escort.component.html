@@ -1,0 +1,65 @@
+<app-navbar [items]="navbarItems"></app-navbar>
+
+<div style="margin-top: 20px; margin-right: 20px; margin-left: 20px;">
+    <div class="grid">
+        <div class="col-8">
+            <div class="grid">
+                <div class="col-12">
+                    <p-card header="Hello escort!">
+                        <div>
+                            Your account info:
+                            <br><br>
+                            {{loremIpsum}}
+                        </div>
+                        <button pButton label="Report status" class="p-button-rounded"
+                            style="width: 100%;  margin-top: 2ex; margin-bottom: 2ex; margin-right: 2ex; margin-left: 2ex;"></button>
+                    </p-card>
+                </div>
+                <div class="col-6">
+                    <p-card header="Your transports">
+                        <div>
+                            <p-orderList [value]="transports">
+
+                                <ng-template let-transport pTemplate="item">
+                                    <div>
+                                        <div class="product-list-detail">
+                                            <h5 class="mb-2">Money amount: ${{transport.moneyInPaper}}</h5>
+                                            <h5 class="mb-2">Transport status: {{transport.transportStatus}}</h5>
+                                            <p>Price: ${{transport.transportPrice}}</p>
+                                            <p>Origin agency: {{transport.originAgency}}</p>
+                                            <p>Destination agency: {{transport.destinationAgency}}</p>
+                                            <button pButton label="Change status" class="p-button-rounded"
+                                                style="width: 100%;  margin-top: 1ex; margin-bottom: 1ex; margin-right: 1ex; margin-left: 1ex;"></button>
+                                            <button pButton label="Cancel transport" class="p-button-rounded"
+                                                style="width: 100%;  margin-top: 1ex; margin-bottom: 1ex; margin-right: 1ex; margin-left: 1ex;"></button>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-orderList>
+
+                        </div>
+                    </p-card>
+                </div>
+                <div class="col-6">
+                    <p-card header="Recent actions">
+                        <div>
+                            {{loremIpsum}}
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-4">
+            <p-card header="It's a bank">
+                <div>
+                    <p>Here are our new offers!</p>
+                    <br><br>
+                    {{loremIpsum}}
+                    <br><br>
+                    {{loremIpsum}}
+                </div>
+            </p-card>
+        </div>
+    </div>
+</div>

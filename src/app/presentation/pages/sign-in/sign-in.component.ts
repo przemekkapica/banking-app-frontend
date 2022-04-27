@@ -23,6 +23,9 @@ export class SignInComponent implements OnInit {
     else if (this.username == 'cli' && this.password == 'cli') {
       this.router.navigate(['client']);
     }
+    else if (this.username == 'esc' && this.password == 'esc') {
+      this.router.navigate(['escort']);
+    }
   }
 
   ngOnInit(): void { }
