@@ -69,12 +69,12 @@ export class EscortComponent implements OnInit {
       destinationAgency: 10
     },
     {
-    moneyInPaper: 140000,
-    escortId: 1,
-    transportStatus: 'To do',
-    transportPrice: 7000,
-    originAgency: 9,
-    destinationAgency: 2,
+      moneyInPaper: 140000,
+      escortId: 1,
+      transportStatus: 'To do',
+      transportPrice: 7000,
+      originAgency: 9,
+      destinationAgency: 2,
     }]
   }
 }

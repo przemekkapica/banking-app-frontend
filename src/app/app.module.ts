@@ -29,6 +29,10 @@ import { CalendarModule } from 'primeng/calendar';
 import { MenubarModule } from 'primeng/menubar';
 import { OrderListModule } from 'primeng/orderlist';
 import { DropdownModule } from 'primeng/dropdown';
+import { ClientModule } from './data/client/client.module';
+import { environment } from 'src/environments/environment';
+import { ClientRepository } from './domain/client/client-repository';
+import { ClientDataSource } from './data/client/data_sources/client_data_source';
 
 
 @NgModule({
@@ -60,8 +64,14 @@ import { DropdownModule } from 'primeng/dropdown';
     MenubarModule,
     OrderListModule,
     DropdownModule,
+    ClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'ClientDataSource',
+      useClass: environment.clientDataSource
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
