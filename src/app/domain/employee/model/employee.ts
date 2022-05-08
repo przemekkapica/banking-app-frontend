@@ -1,6 +1,6 @@
-import { Person } from "../../person/model/person";
+import { PersonData } from "../../person/model/person";
 
-export interface Employee extends Person {
+export interface Employee extends PersonData {
     salary: number;
     post: string;
 }

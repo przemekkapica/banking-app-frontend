@@ -1,10 +1,12 @@
 import { Account } from "../../account/model/account";
 import { Deposit } from "../../deposit/model/deposit";
 import { Loan } from "../../loan/model/loan";
-import { Person } from "../../person/model/person";
+import { PersonData } from "../../person/model/person";
 
-export interface Client extends Person {
+export interface Client {
+     id: string;
      accounts: Array<Account>;
-     loans: Array<Loan>;
-     deposits: Array<Deposit>;
+     loans?: Array<Loan>; // TODO: remove nullable
+     deposits?: Array<Deposit>;
+     personData?: PersonData;
 }

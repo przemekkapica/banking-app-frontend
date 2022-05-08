@@ -5,10 +5,10 @@ import { Client } from "../model/client";
 
 
 @Injectable({ providedIn: 'root' })
-export class GetClientUseCase implements UseCase<string, Client> {
+export class GetAllClientsUseCase {
     constructor(private clientRepository: ClientRepository) { }
 
-    public async call(request: string): Promise<Client> {
-        return this.clientRepository.getClientById(request);
+    public async call(): Promise<Client[]> {
+        return await this.clientRepository.getAllClients();
     }
 }

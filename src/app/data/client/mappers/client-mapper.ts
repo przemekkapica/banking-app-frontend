@@ -6,15 +6,18 @@ import { ClientDTO } from '../dtos/client-dto';
 export class ClientMapper implements BidirectionalMapper<ClientDTO, Client> {
   mapTo(param: Client): ClientDTO {
     return {
-        id: '',
-        accounts: [],
+        id: param.id,
+        accounts: param.accounts,
         createdDate: new Date(),
+        loans: param.loans!, // TODO: remove
+        deposits: param.deposits!
     };
   }
 
   mapFrom(param: ClientDTO): Client {
     return {
-        accounts: param.accounts
-    };
+      id: param.id,
+      accounts: param.accounts,
+   };
   }
 }

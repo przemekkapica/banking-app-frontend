@@ -1,18 +1,22 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Deposit } from '../../../domain/deposit/model/deposit';
 import { Loan } from '../../../domain/loan/model/loan';
 import { Account } from '../../../domain/account/model/account';
+import { GetAllClientsUseCase } from 'src/app/domain/client/use-case/get-all-clients-use-case';
+import { ClientRepository } from 'src/app/domain/client/client-repository';
+import { Client } from 'src/app/domain/client/model/client';
 
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
-  styleUrls: ['./client.component.scss']
+  styleUrls: ['./client.component.scss'],
+  providers: []
 })
 export class ClientComponent implements OnInit {
 
-  deposits!: Deposit[];
-  loans!: Loan[];
+  clients: Client[] = [];
+  client?: Client;
   navbarItems = [
     {
       label: 'Management',
@@ -45,35 +49,17 @@ export class ClientComponent implements OnInit {
 
   loremIpsum = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut!';
 
-  constructor() {
+  constructor(
+    private readonly getAllClientsUseCase: GetAllClientsUseCase
+  ) { }
+  
+  async ngOnInit(): Promise<void> {
+    await this.getAllClients();
+    this.client = this.clients[0];
+  }
+  
+  private async getAllClients() {
+    await this.getAllClientsUseCase.call().then((data: Client[]) => this.clients = data);
   }
 
-  ngOnInit(): void {
-    this.initializeSampleData();
-  }
-
-  initializeSampleData(): void {
-    //TEMPORARY 
-    this.deposits = [{
-      accountId: '1',
-      moneyAmount: 200,
-      interestRate: 10,
-      startDate: new Date(1999, 10, 15, 0, 0, 0),
-      endDate: new Date(2023, 10, 15, 0, 0, 0)
-    },
-    {
-      accountId: '2',
-      moneyAmount: 3000,
-      interestRate: 500,
-      startDate: new Date(2000, 1, 4, 0, 0, 0),
-      endDate: new Date(2030, 1, 4, 0, 0, 0)
-    }]
-    this.loans = [{
-      accountId: '2',
-      amountToPay: 5000,
-      interestRate: 300,
-      startDate: new Date(2001, 1, 4, 0, 0, 0),
-      endDate: new Date(2023, 1, 4, 0, 0, 0)
-    }]
-  }
 }

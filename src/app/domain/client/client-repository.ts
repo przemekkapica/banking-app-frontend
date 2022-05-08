@@ -2,13 +2,13 @@ import { Account } from '../account/model/account';
 import { Client } from './model/client';
 
 export abstract class ClientRepository {
-    abstract getClientById(id: string): Promise<Client>;
+    public abstract getClientById(id: string): Client;
 
-    abstract getAllClients(): Promise<Client[]>;
+    public abstract getAllClients(): Promise<Client[]>;
 
-    abstract updateClient(): Promise<Client>;
+    public abstract updateClient(): Client;
 
-    abstract payInstallment(id: string): Promise<void>;
+    public abstract payInstallment(id: string): void;
 
-    abstract createAccount(account: Account): Promise<void>;
+    public abstract createAccount(account: Account): void;
 }

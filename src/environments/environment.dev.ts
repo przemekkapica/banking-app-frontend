@@ -2,6 +2,6 @@ import { RemoteClientDataSource } from "src/app/data/client/data_sources/remote_
 import { Env } from 'src/environments/env';
 
 export const environment = {
-  env: Env.PROD,
-  clientDataSource: RemoteClientDataSource
+    env: Env.DEV,
+    clientDataSource: RemoteClientDataSource
 };

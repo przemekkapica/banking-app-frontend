@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Inject, Injectable } from "@angular/core";
 import { UseCase } from "src/app/domain/common/use-case";
 import { ClientRepository } from "../../client/client-repository";
 

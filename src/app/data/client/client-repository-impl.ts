@@ -1,8 +1,8 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { map } from "rxjs";
+import { Inject, Injectable } from "@angular/core";
+import { Account } from "src/app/domain/account/model/account";
 import { ClientRepository } from "src/app/domain/client/client-repository";
 import { Client } from "src/app/domain/client/model/client";
+import { ClientDataSource } from "./data_sources/client_data_source";
 import { ClientMapper } from "./mappers/client-mapper";
 
 @Injectable({
@@ -14,19 +14,30 @@ export class ClientRepositoryImpl implements ClientRepository {
     baseUrl = 'localhost:4200/api';
 
     constructor(
-        private httpClient: HttpClient
+        @Inject('ClientDataSource') private clientDataSource: ClientDataSource,
     ) { }
 
-    getClientById(id: string): Promise<Client> {
-        return new Promise((resolve, reject) =>
-            this.httpClient.get<Client>('${this.baseUrl}/client/${id}').pipe(map(this.clientMapper.mapTo)));
-    }
-
-    getAllClients(): Promise<Client[]> {
+    payInstallment(id: string): Promise<void> {
         throw new Error("Method not implemented.");
     }
 
-    updateClient(): Promise<Client> {
+    createAccount(account: Account): Promise<void> {
+        throw new Error("Method not implemented.");
+    }
+
+    getClientById(id: string): Client {
+        throw new Error("Method not implemented.");
+    }
+
+    getAllClients(): Promise<Client[]> {
+        const clients = this.clientDataSource.getAllClients();
+        
+        return clients.then((data) =>
+            new Promise((resolve, reject) =>
+                resolve(data.map((item) => this.clientMapper.mapTo(this.clientMapper.mapFrom(item))))));
+    }
+
+    updateClient(): Client {
         throw new Error("Method not implemented.");
     }
 }
