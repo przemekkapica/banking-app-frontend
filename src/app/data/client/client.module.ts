@@ -12,5 +12,4 @@ import { ClientRepositoryImpl } from './client-repository-impl';
     {provide: ClientRepository, useClass: ClientRepositoryImpl}
   ]
 })
-export class ClientModule {
-}
+export class ClientModule { }

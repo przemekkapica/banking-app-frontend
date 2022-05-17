@@ -11,8 +11,6 @@ import { ClientMapper } from "./mappers/client-mapper";
 export class ClientRepositoryImpl implements ClientRepository {
     clientMapper = new ClientMapper();
 
-    baseUrl = 'localhost:4200/api';
-
     constructor(
         @Inject('ClientDataSource') private clientDataSource: ClientDataSource,
     ) { }
@@ -30,7 +28,7 @@ export class ClientRepositoryImpl implements ClientRepository {
     }
 
     getAllClients(): Promise<Client[]> {
-        const clients = this.clientDataSource.getAllClients();
+        const clients = this.clientDataSource.getClients();
         
         return clients.then((data) =>
             new Promise((resolve, reject) =>
