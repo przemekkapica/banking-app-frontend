@@ -1,0 +1,91 @@
+<app-navbar [items]="navbarItems"></app-navbar>
+
+<div style="margin-top: 20px; margin-right: 20px; margin-left: 20px;">
+    <div class="grid">
+        <div class="col-4">
+            <p-card>
+                <ng-template pTemplate="header">
+                    <p style="font-size: 48px; padding-left: 20px; padding-top: 20px; margin-bottom: 0; margin-top: 0;">Your accounts</p>
+                </ng-template>
+                <div *ngFor="let account of clients[0].accounts" style="margin-top: 30px;">
+                    <h4>{{account.name}}</h4>
+                    <span style="font-size: 14px;">Balance: </span> <span style="font-size: 30px;">{{account.moneyAmount}} {{account.currency}}</span>
+                    <span style="float: right;"><button pButton pRipple type="button" icon="pi pi-arrow-right" class="p-button-rounded" (click)="selectAccount(account)"></button></span>
+                    <div style="margin-top: 10px"></div>
+                    <p-divider></p-divider>
+                </div>
+                <div style="text-align: left; margin-top: 60px;">
+                    <button pButton label="Open account" class="p-button-rounded"
+                    style="width: 300px; margin-right: 24px;"></button>
+                </div>
+            </p-card>
+        </div>
+        <div class="col-8">
+            <p-card>
+                <ng-template pTemplate="header">
+                    <p style="font-size: 48px; padding-left: 20px; padding-top: 20px; margin-bottom: 0; margin-top: 0;">{{selectedAccount.name}}</p>
+                </ng-template>
+                <div style="margin-top: 30px; margin-bottom: 160px;">
+                    <span style="font-size: 24px; font-weight: 300;">Balance: </span> <span style="font-size: 40px;">{{selectedAccount.moneyAmount}} {{selectedAccount.currency}}</span>
+                </div>
+                
+                <button pButton label="Transfer money" class="p-button-rounded"
+                    style="width: 300px; margin-right: 24px;"></button>
+                <button pButton label="Close account" class="p-button-rounded p-button-outlined p-button-danger"
+                    style="width: 300px;"></button>
+            </p-card>
+        </div>
+
+        <!-- <div class="col-4">
+            <p-card header="Your deposits">
+                <div>
+                    <button pButton label="New deposit" class="p-button-rounded"
+                        style="width: 100%; margin-top: 2ex; margin-bottom: 2ex; margin-right: 2ex; margin-left: 2ex;"></button>
+
+                    <p-orderList [value]="clients[0].deposits!">
+                        <ng-template let-deposit pTemplate="item">
+                            <div>
+                                <div class="product-list-detail">
+                                    <h5 class="mb-2">Money amount: ${{deposit.moneyAmount}}</h5>
+                                    <h5 class="mb-2">Interest rate: ${{deposit.interestRate}}</h5>
+                                    <p>Start date: {{deposit.startDate | date:'shortDate'}}</p>
+                                    <p>End date: {{deposit.endDate | date:'shortDate'}}</p>
+                                    <button pButton label="Close deposit" class="p-button-rounded"
+                                        style="width: 100%;  margin-top: 1ex; margin-bottom: 1ex; margin-right: 1ex; margin-left: 1ex;"></button>
+                                    <button pButton label="Withdraw from deposit" class="p-button-rounded"
+                                        style="width: 100%;  margin-top: 1ex; margin-bottom: 1ex; margin-right: 1ex; margin-left: 1ex;"></button>
+
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-orderList>
+
+                </div>
+            </p-card>
+        </div>
+        <div class="col-4">
+            <p-card header="Your loans">
+                <div>
+                    <button pButton label="New loan" class="p-button-rounded"
+                        style="width: 100%; margin-top: 2ex; margin-bottom: 2ex; margin-right: 2ex; margin-left: 2ex;"></button>
+
+                    <p-orderList [value]="clients[0].deposits!">
+
+                        <ng-template let-loan pTemplate="item">
+                            <div>
+                                <div class="product-list-detail">
+                                    <h5 class="mb-2">Money amount: ${{loan.amountToPay}}</h5>
+                                    <h5 class="mb-2">Interest rate: ${{loan.interestRate}}</h5>
+                                    <p>Start date: {{loan.startDate | date:'shortDate'}}</p>
+                                    <p>End date: {{loan.endDate | date:'shortDate'}}</p>
+
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-orderList>
+
+                </div>
+            </p-card>
+        </div> -->
+    </div>
+</div>
