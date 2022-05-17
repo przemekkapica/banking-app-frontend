@@ -5,7 +5,7 @@ import { CEO } from "../model/ceo";
 
 
 @Injectable({ providedIn: 'root' })
-export class GetCEOUseCase {
+export class GetAllCEOUseCase {
 
     constructor(private ceoRepository: CEORepository) { }
 
