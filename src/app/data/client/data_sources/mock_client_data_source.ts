@@ -89,10 +89,9 @@ export class MockClientDataSource implements ClientDataSource {
 
     getClients(): Promise<ClientDTO[]> {
         const accounts: Account[] = [
-            { id: '1', moneyAmount: 18000, currency: Currency.PLN }
-            ,
-            { id: '2', moneyAmount: 450000, currency: Currency.PLN }
-            ,
+            { id: '1', name: 'Checking account', moneyAmount: 18000, currency: Currency.PLN },
+            { id: '2', name: 'Savings account', moneyAmount: 450000, currency: Currency.PLN },
+            { id: '3', name: 'Retirement account', moneyAmount: 28000, currency: Currency.EUR },
         ];
         const deposits = [{
             accountId: '1',
