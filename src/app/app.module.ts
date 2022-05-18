@@ -11,7 +11,7 @@ import { AppRoutingModule } from './presentation/routing/app-routing.module';
 import { AppComponent } from './presentation/app.component';
 import { SignInComponent } from './presentation/pages/sign-in/sign-in.component';
 import { SignUpComponent } from './presentation/pages/sign-up/sign-up.component';
-import { ClientComponent } from './presentation/pages/client/client.component';
+import { ClientComponent } from './presentation/pages/client/client_page/client.component';
 import { EmployeeComponent } from './presentation/pages/employee/employee.component';
 import { EscortComponent } from './presentation/pages/escort/escort.component';
 import { NavbarComponent } from './presentation/common/navbar/navbar.component';

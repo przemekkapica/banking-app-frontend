@@ -1,11 +1,8 @@
 
 import { Component, Inject, OnInit } from '@angular/core';
-import { Deposit } from '../../../domain/deposit/model/deposit';
-import { Loan } from '../../../domain/loan/model/loan';
-import { Account } from '../../../domain/account/model/account';
 import { GetAllClientsUseCase } from 'src/app/domain/client/use-case/get-all-clients-use-case';
-import { ClientRepository } from 'src/app/domain/client/client-repository';
 import { Client } from 'src/app/domain/client/model/client';
+import { Account } from 'src/app/domain/account/model/account';
 
 @Component({
   selector: 'app-client',
@@ -17,16 +14,22 @@ export class ClientComponent implements OnInit {
 
   clients: Client[] = [];
   client?: Client;
+  selectedAccount!: Account;
   navbarItems = [
     {
-      label: 'Management',
-      icon: 'pi pi-sitemap',
-      items: []
+      label: 'Accounts',
+      icon: 'pi pi-credit-card',
+      routerLink: ['accounts'],
     },
     {
-      label: 'Actions',
-      icon: 'pi pi-fw pi-pencil',
-      items: []
+      label: 'Loans',
+      icon: 'pi pi-money-bill',
+      routerLink: ['loans'],
+    },
+    {
+      label: 'Deposits',
+      icon: 'pi pi-fw pi-shield',
+      routerLink: ['deposits'],
     },
     {
       label: 'Client 1',
@@ -56,10 +59,15 @@ export class ClientComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     await this.getAllClients();
     this.client = this.clients[0];
+    this.selectedAccount = this.clients[0].accounts[0];
   }
   
   private async getAllClients() {
     await this.getAllClientsUseCase.call().then((data: Client[]) => this.clients = data);
+  }
+
+  selectAccount(account: Account): void {
+    this.selectedAccount = account;
   }
 
 }
