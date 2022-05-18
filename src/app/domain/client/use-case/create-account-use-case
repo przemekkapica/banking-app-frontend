@@ -1,0 +1,15 @@
+import { Inject, Injectable } from "@angular/core";
+import { Account } from "../../account/model/account";
+import { UseCase } from "../../common/use-case";
+import { ClientRepository } from "../client-repository";
+import { Client } from "../model/client";
+
+
+@Injectable({ providedIn: 'root' })
+export class CreateAccountUseCase {
+    constructor(private clientRepository: ClientRepository) { }
+
+    public async call(request: Account): Promise<void> {
+        return await this.clientRepository.createAccount(request);
+    }
+}

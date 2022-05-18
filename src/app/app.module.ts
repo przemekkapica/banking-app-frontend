@@ -33,6 +33,7 @@ import { ClientModule } from './data/client/client.module';
 import { environment } from 'src/environments/environment';
 import { ClientRepository } from './domain/client/client-repository';
 import { ClientDataSource } from './data/client/data_sources/client_data_source';
+import { AdminPanelComponent } from './presentation/pages/admin-panel/admin-panel.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ClientDataSource } from './data/client/data_sources/client_data_source'
     NavbarComponent,
     ClientComponent,
     EscortComponent,
+    AdminPanelComponent,
   ],
   imports: [
     AppRoutingModule,

@@ -1,0 +1,88 @@
+<app-navbar [items]="navbarItems"></app-navbar>
+
+<div style="margin-top: 20px; margin-right: 20px; margin-left: 20px;">
+    <div class="grid">
+        <div class="col-8">
+            <div class="grid">
+                <div class="col-12">
+                    <p-card header="Hello employee!">
+                        <div>
+                            What about doing some shitty work today? :)
+                            <br><br>
+                            {{loremIpsum}}
+                        </div>
+                    </p-card>
+                </div>
+                <div class="col-6">
+                    <p-card header="Clients">
+                        <div>
+                            <button pButton label="New client" class="p-button-rounded"
+                            style="width: 100%;  margin-top: 1ex; margin-bottom: 1ex; margin-right: 1ex; margin-left: 1ex;"></button>
+                            <p-orderList [value]="clients">
+
+                                <ng-template let-client pTemplate="item">
+                                    <div>
+                                        <div class="product-list-detail">
+                                            <h5 class="mb-2">First name: {{client.PersonData.firstName}}</h5>
+                                            <h5 class="mb-2">Last name: {{client.PersonData.lastName}}</h5>
+                                            <p>Date of birth: {{client.PersonData.dateOfBirth}}</p>
+                                           
+                                            <button pButton label="Manage client" class="p-button-rounded"
+                                                style="width: 100%;  margin-top: 1ex; margin-bottom: 1ex; margin-right: 1ex; margin-left: 1ex;"></button>
+                                            <button pButton label="Delete client" class="p-button-rounded"
+                                                style="width: 100%;  margin-top: 1ex; margin-bottom: 1ex; margin-right: 1ex; margin-left: 1ex;"></button>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-orderList>
+                        </div>
+                        </p-card>
+
+                </div>
+                <div class="col-6">
+                    <p-card header="Transports">
+                        <div>
+                            <p-orderList [value]="transports">
+
+                                <ng-template let-transport pTemplate="item">
+                                    <div>
+                                        <div class="product-list-detail">
+                                            <h5 class="mb-2">Money amount: ${{transport.moneyInPaper}}</h5>
+                                            <h5 class="mb-2">Transport status: {{transport.transportStatus}}</h5>
+                                            <p>Price: ${{transport.transportPrice}}</p>
+                                            <p>Origin agency: {{transport.originAgency}}</p>
+                                            <p>Destination agency: {{transport.destinationAgency}}</p>
+                                            <button pButton label="Change status" class="p-button-rounded"
+                                                style="width: 100%;  margin-top: 1ex; margin-bottom: 1ex; margin-right: 1ex; margin-left: 1ex;"></button>
+                                            <button pButton label="Cancel transport" class="p-button-rounded"
+                                                style="width: 100%;  margin-top: 1ex; margin-bottom: 1ex; margin-right: 1ex; margin-left: 1ex;"></button>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </p-orderList>
+                        </div>
+                    </p-card>
+                </div>
+                <div class="col-6">
+                    <p-card header="Recent actions">
+                        <div>
+                            {{loremIpsum}}
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <p-card header="It's a bank">
+                <div>
+                    <p>It's a serious bank</p>
+                    <br><br>
+                    {{loremIpsum}}
+                    <br><br>
+                    {{loremIpsum}}
+                </div>
+            </p-card>
+        </div>
+    </div>
+</div>
+
