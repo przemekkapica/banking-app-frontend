@@ -51,5 +51,19 @@ export class NetworkConfiguration {
         return '${API_URL}/clients/' + clientId + '/deposits/' + depositId;
     }
 
-    // TODO: do the rest :)
+    //Escort
+    static getEscorts() {
+        return '${API_URL}/escorts'
+    }
+    static updateEscort() {
+        return '${API_URL}/escort/{escortId}';
+    }
+    static getEscort(escortId: number) {
+        return '${API_URL}/escorts/' + escortId;
+    }
+    static deleteEscort(escortId: number) {
+        return '${API_URL}/escorts/' + escortId;
+    }
+
+     // TODO: do the rest :)
 }
