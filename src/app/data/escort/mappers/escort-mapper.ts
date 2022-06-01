@@ -14,6 +14,7 @@ export class EscortMapper implements BidirectionalMapper<EscortDTO, Escort> {
 
   mapFrom(param: EscortDTO): Escort {
     return {
+      
       moneyBalance:param.moneyBalance,
       workStatus:param.workStatus,
       escortId:param.escortId
