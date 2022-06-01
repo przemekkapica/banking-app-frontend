@@ -1,6 +1,8 @@
 export class NetworkConfiguration {
     static API_URL = 'localhost:8080';
 
+    //CLIENT
+
     // Client paths - GET
     static getClients() {
         return '${API_URL}/clients'
@@ -51,5 +53,25 @@ export class NetworkConfiguration {
         return '${API_URL}/clients/' + clientId + '/deposits/' + depositId;
     }
 
-    // TODO: do the rest :)
+    // EMPLOYEE
+
+    // Employee paths - GET
+    static getEmployees() {
+        return '${API_URL}/employees'
+    }
+    static getEmployee(employee_id: string) {
+        return '${API_URL}/employees/' + employee_id;
+    }
+    // Employee paths - POST
+    static createEmployee() {
+        return '${API_URL}/employees';
+    }    
+    // Employee paths - PUT
+    static updateEmployee() {
+        return '${API_URL}/employees/{employee_id}';
+    }    
+    // Employee paths - DELETE
+    static deleteEmployee(employee_id: string) {
+        return '${API_URL}/employees/' + employee_id;
+    }   
 }

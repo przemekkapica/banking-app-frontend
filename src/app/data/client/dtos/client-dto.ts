@@ -6,6 +6,6 @@ export interface ClientDTO {
     id: string;
     createdDate: Date;
     accounts: Array<Account>;
-   loans: Array<Loan>;
-   deposits: Array<Deposit>;
+    loans: Array<Loan>;
+    deposits: Array<Deposit>;
 }
