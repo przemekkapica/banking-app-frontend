@@ -14,7 +14,7 @@ export class EscortRepositoryImpl implements EscortRepository {
         @Inject('EscortDataSource') private escortDataSource: EscortDataSource,
     ) { }
 
-    getEscortById(escortId: number): Escort {
+    getEscortById(escortId: number): Promise<Escort> {
         throw new Error("Method not implemented.");
     }
 
@@ -26,10 +26,10 @@ export class EscortRepositoryImpl implements EscortRepository {
                 resolve(escort.map((item) => this.escortMapper.mapTo(this.escortMapper.mapFrom(item))))));
     }
 
-    updateEscort(): Escort {
+    updateEscort():  Promise<Escort> {
         throw new Error("Method not implemented.");
     }
-    deleteEscort(): Escort {
+    deleteEscort(): void {
         throw new Error("Method not implemented.");
     }
 }
